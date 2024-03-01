@@ -8,6 +8,8 @@ class Day6 {
     //hitta 4 chars i följd som inte liknar varandra och ta ut index av den första av dessa fyra chars
     //skapa en substring och kolla om index 1 finns i denna substring?
     //gör om till set för att ta bort ev dubbletter
+
+    //PART 1
     fun getIndexForStartOfPacket(data:String) {
         var ss: String
         var set:Set<Char>
@@ -25,6 +27,7 @@ class Day6 {
         }
     }
 
+    //PART 2
     fun getIndexForStartOfMessage(data: String){
         var ss: String
         var set:Set<Char>
