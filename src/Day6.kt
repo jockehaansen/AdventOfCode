@@ -20,7 +20,7 @@ class Day6 {
                 set = ss.toList().toSet()
 
                 if (ss.length == set.size) {
-                    println("packet marker $set at index ${i+4}")
+                    println("Packet marker $set at index ${i+4}")
                     break
                 }
             }
@@ -38,10 +38,29 @@ class Day6 {
                 set = ss.toList().toSet()
 
                 if (ss.length == set.size) {
-                    println("message marker $set at index ${i+14}")
+                    println("Message marker $set at index ${i+14}")
                     break
                 }
             }
+        }
+    }
+
+    /*
+    Inspired by: https://github.com/avan1235/advent-of-code-2022/blob/master/src/main/kotlin/Day6.kt
+     */
+
+    fun inspired(data:String, puzzlePart:Int){
+        val dataAsChar = data.toCharArray().toList()
+
+        val partOne = dataAsChar.asSequence().windowed(4, 1).mapIndexedNotNull{index, char -> if (char.toSet().size == 4) index + 4 else
+        null }.firstOrNull()
+
+        val partTwo = dataAsChar.asSequence().windowed(14, 1).mapIndexedNotNull{index, char -> if (char.toSet().size == 14) index + 14 else
+            null }.firstOrNull()
+
+        when(puzzlePart){
+            1 -> println("Packet marker at index (INSP) $partOne")
+            2 -> println("Message marker at index (INSP) $partTwo")
         }
     }
 }
@@ -50,4 +69,6 @@ fun main() {
     val day6 = Day6()
     day6.getIndexForStartOfPacket(day6.data)
     day6.getIndexForStartOfMessage(day6.data)
+    day6.inspired(day6.data,1)
+    day6.inspired(day6.data,2)
 }
