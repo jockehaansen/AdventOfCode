@@ -80,7 +80,7 @@ class Day2 {
     /*
     Inspirerad lösning: https://github.com/avan1235/advent-of-code-2022/blob/master/src/main/kotlin/Day2.kt
     *Enum inspired solution
-    *More versatile and easier to build out
+    *More versatile and easier to build out, infix functions
      */
 
     //Basic enums med ett score value på vilket move man använde
